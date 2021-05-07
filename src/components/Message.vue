@@ -4,7 +4,7 @@
       <div class="message">
         <div class="flex">
           <p class="name">{{value.name}}</p>
-          <img class="icon" src="../assets/heart.png" />
+          <img class="icon" src="../assets/heart.png" @click="fav(index)" alt />
           <p class="number">{{value.like.length}}</p>
           <img 
             class="icon" 
@@ -26,7 +26,7 @@
             v-if="profile"
           />
         </div>
-        <p class="text">{{value.item.id}}</p>
+        <p class="text">{{value.item.share}}</p>
       </div>
     </div>
   </div>
@@ -69,7 +69,7 @@ export default {
         });
       }else{
         axios
-          .post("https://fathomless-cliffs-76668.herokuapp.com/api/like",{
+          .post("https://fathomless-cliffs-76668.herokuapp.com/api/like", {
             share_id: this.share[index].item.id,
             user_id: this.$store.state.user.id,
           })
@@ -108,11 +108,11 @@ export default {
               shares.data.data[i].id
           )
           .then((response) => {
-            if(this.$router.name == "profile"){
-              if(response.data.item.user_id == this.$state.user.id){
-                data.push(reponse.data);
+            if(this.$route.name == "profile"){
+              if(response.data.item.user_id == this.$store.state.user.id){
+                data.push(response.data);
               }
-            } else if(this.$router.name == "detail"){
+            } else if(this.$route.name == "detail"){
               if(response.data.item.id == this.id){
                 data.push(response.data);
               }
@@ -126,10 +126,10 @@ export default {
     },
   },
   created(){
-    if(this.$router.name === "home"){
+    if(this.$route.name === "home"){
       this.path = false;
     }
-    if(this.$router,name === "detail"){
+    if(this.$route.name === "detail"){
       this.profile = false;
     }
     this.getShares();
