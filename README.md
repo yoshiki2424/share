@@ -1,24 +1,35 @@
 # shareについて
 
-## Project setup
+## コンセプト
 ```
-yarn install
+・webアプリケーションの全体像を理解するために制作
+
+・Twitter風アプリケーションSHAREを作成した
 ```
 
-### Compiles and hot-reloads for development
+### 技術内容
 ```
-yarn serve
-```
-
-### Compiles and minifies for production
-```
-yarn build
+・言語：Javascript,PHP
+・フレームワーク：Vue.js,Laravel
+・DB：MySQL
+・各種ツール：Heroku,Netlify
 ```
 
-### Lints and fixes files
+### 実装した機能等の概要
 ```
-yarn lint
+・会員登録する
+・ログインする
+・ログアウトする（会員のみ）
+・ユーザー情報を取得する（会員のみ）
+・ユーザー情報を更新する（会員のみ）
+・シェアの一覧を表示する（会員のみ）
+・自分のシェア一覧を表示する（会員のみ）
+・シェアを投稿する（会員のみ）
+・シェアを削除する（会員のみ）
+・シェアにいいねを付ける（会員のみ）
+・シェアからいいねを外す（会員のみ）
+・シェアにコメントを追加する（会員のみ）
+・シェアに対するいいねの数を表示する（会員のみ）
+・シェアに対するコメントを表示する（会員のみ
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
